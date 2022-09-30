@@ -50,6 +50,8 @@ ecli run "package-name"
 curl "$ECLI_REGISTRY/{package-name}.json" | ecli run
 ```
 
+> "run" = "pull" + "start"
+
 - 角色2：通用 ebpf 数据文件发布者/ebpf developer
 
 我们的第二个角色是一个开发人员，他想要创建一个通用二进制，并在任何机器和操作系统上分发它。这对于命令行工具或者可以直接在Shell中运行的任何东西都很有用:

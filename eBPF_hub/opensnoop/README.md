@@ -1,6 +1,18 @@
-## opensnoop
+# opensnoop
+
+- version: 0.1.0
+- license: GPL,
+- author: John Doe
 
 opensnoop traces the open() syscall system-wide, and prints various details.
+
+Run:
+
+```shell
+sudo ./ecli opensnoop
+```
+
+> this should be auto generated.
 
 ## result
 
