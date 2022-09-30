@@ -51,6 +51,18 @@ to avoid cloning it again:
 make ENABLE_MIN_CORE_BTFS=1 BTF_HUB_ARCHIVE=<path_to_btfhub-archive> -j$(nproc)
 ```
 
+## add new project
+
+The project can be a dir or a git submodule, with at lease the following files:
+
+- a `README,md`
+- a `config.json`
+
+If you use eunomia-bpf, the project will be build automaticly. The following files should exists:
+
+- <tool>.bpf.c contains BPF C code, which gets compiled into `package.json`
+- <tool>.bpf.h can optionally contain types exported to userspace through pref event or ring buffer
+
 ## reference
 
 Most codes come from:
