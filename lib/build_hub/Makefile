@@ -1,4 +1,4 @@
-TEST_EXAMPLE_DIR ?= ../../eBPF_hub/execsnoop/
+TEST_EXAMPLE_DIR ?= ../../eBPF_hub/
 TEST_TIME ?= 4
 ECLI_DIR ?= ../../ecli/
 
@@ -7,9 +7,9 @@ ECLI_DIR ?= ../../ecli/
 .PHONY:test test_project clone_and_install_deps clean
 all: test
 
-test_project:
-	SOURCE_DIR=../$(TEST_EXAMPLE_DIR) make -C eunomia-cc build
-	sudo timeout --preserve-status -s 2 $(TEST_TIME) ./ecli run $(TEST_EXAMPLE_DIR)package.json
+install-deps: ## install deps
+	apt update
+	apt-get install libcurl4-openssl-dev libelf-dev clang llvm ## libgtest-dev
 
 clone_and_install_deps:
 	rm -rf ./eunomia-cc ./ecli

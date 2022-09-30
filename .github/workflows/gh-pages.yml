@@ -35,7 +35,7 @@ jobs:
 
       - name: install deps
         run: |
-             sudo make -C ecli install-deps
+             sudo make -C lib/build_hub install-deps
 
       - name: build compile set
         run:  |
