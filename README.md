@@ -16,6 +16,7 @@
 - [sigsnoop](eBPF_hub/sigsnoop)
 - [template](eBPF_hub/template)
 - [tcpconnlat](eBPF_hub/tcpconnlat)
+- [statsnoop](eBPF_hub/statsnoop)
 
 > index can be auto generated.
 
