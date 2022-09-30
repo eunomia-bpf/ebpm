@@ -32,29 +32,23 @@ jobs:
         uses: actions/checkout@v3
       - name: get submodule
         run:  git submodule update --init --recursive
+      - name: install deps
+        run: |
+             sudo make -C lib/build_hub install-deps
+      - name: build compile set
+        run:  |
+              make -C lib/build_hub clone_and_install_deps
+              make -C lib/build_hub test
+
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
           source: ./
           destination: ./_site
-
-      - name: install deps
-        run: |
-             sudo make -C lib/build_hub install-deps
-
-      - name: build compile set
-        run:  |
-              make -C lib/build_hub clone_and_install_deps
-              make -C lib/build_hub test
-              cp ./_site/* ./eBPF_hub/
-
       - name: Setup Pages
         uses: actions/configure-pages@v1
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
-        with:
-          # Upload entire repository
-          path: './eBPF_hub'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@main
