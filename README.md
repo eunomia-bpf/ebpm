@@ -37,11 +37,19 @@ curl "$ECLI_REGISTRY/{package-name}.json" | ecli run
 
 我们的第二个角色是一个开发人员，他想要创建一个通用二进制，并在任何机器和操作系统上分发它。这对于命令行工具或者可以直接在Shell中运行的任何东西都很有用:
 
-生成 ebpf 数据文件
+create project
 
-```bash
-./ebpm init opensnoop
-./ebpm build opensnoop
+```console
+$./ebpm init opensnoop
+$ cd opensnoop
+$ tree -a
+.
+├── bootstrap.bpf.c
+├── bootstrap.bpf.h
+├── config.json
+├── .gitignore
+└── README.md
+$./ebpm build opensnoop
 ```
 
 - 需要有约束，gcc 和 linux 版本；
